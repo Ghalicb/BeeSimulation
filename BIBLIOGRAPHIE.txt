@@ -1,0 +1,42 @@
+BIBLIOGRAPHIE 
+
+À noter que la structure de base de ce projet nous a été fournie. Ainsi, toutes les classes extérieures au dossier /src ne sont pas le produit de notre travail !
+
+SITE INTERNET
+
+- http://www.cplusplus.com/doc/tutorial/typecasting/
+
+- http://www.sfml-dev.org/tutorials/2.0/graphics-vertex-array-fr.php
+
+- https://openclassrooms.com/courses/creez-des-applications-2d-avec-sfml/ajouter-de-la-musique-avec-le-module-audio
+
+- http://www.sfml-dev.org/documentation/2.0-fr/classsf_1_1Color.php
+
+- https://vela.astro.ulg.ac.be/Vela/Colors/rgb.html
+
+- http://www.sfml-dev.org/tutorials/2.0/audio-sounds-fr.php
+
+
+MUSIQUE
+
+
+(Zelda Twillight Princess - Cocorico Village by Koji Kondo)
+- https://www.youtube.com/watch?v=3YfMPOnNgCI
+
+(Pokémon Rouge - Combat vs Dresseur by Junichi Masuda)
+- https://www.youtube.com/watch?v=2hjXRSB40l0
+
+(Publicité Miel Pops - Auteur indéterminé)
+- https://www.youtube.com/watch?v=NZEbiHUrS9A
+
+(Professeur Layton - The Adventure Begins by Tomohito Nishiura)
+- https://www.youtube.com/watch?v=jatndb4vOiI
+
+
+IMAGE
+
+- http://www.openfootage.net/?tag=texture
+
+- http://pokemon.lebeaufourbi.fr/wp-content/uploads/2012/04/Pokeball_Template_by_Poke_Lab1.png
+
+- http://fr.123rf.com/profile_akinshin

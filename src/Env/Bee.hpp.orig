@@ -1,0 +1,84 @@
+#ifndef BEE_HPP
+#define BEE_HPP
+#include "Hive.hpp"
+#include "CFSM.hpp"
+#include "../Interface/Drawable.hpp"
+#include "../Interface/Updatable.hpp"
+
+enum Mood {Repos, Aleatoire, Cible};
+
+class Bee : public Collider, public Updatable, public Drawable, public CFSM 
+{
+	public:
+		Bee(Hive& hive, Vec2d pos, double rayon, double energie, double ampV, std::vector<State> etats);
+		Bee(const Bee& copyBee);
+		virtual ~Bee(); 
+		
+		// Getters et setters
+		double getEnergie() const;
+		Vec2d getMemoryFlower() const;
+		bool getMemory() const;
+		Hive& getHiveRef() const;
+		void setMemoryFlower(const Vec2d& flowerPos);
+		void setMemory(bool memoire);
+		void setMood(Mood mood);
+		void setCible(const Vec2d& pos);
+		
+		void addEnergie(double qt);
+		// Indique si une abeille est encore vivante (dépend de son énergie)
+		bool isDead() const;
+		// Permet de définir les fichiers de config selon le type d'abeilles
+		virtual j::Value const& getConfig() const = 0;
+		// Gère l'évolution de l'abeille (action, mouvement et énergie)
+		void update(sf::Time dt);
+		// S'occupe de la perte d'énergie selon le Mood d'une abeille
+		void energyLoss(sf::Time dt);
+		// Définit le mouvement générale de l'abeille selon son Mood
+		void move(sf::Time dt);
+		// Déplacement aléatoire de l'abeille
+		void moveRandomBee(sf::Time dt);
+		// Mouvement ciblé de l'abeille
+		void targetMove(sf::Time dt);
+		// Permet aux abeilles de changer d'angle
+		void changeAngle(sf::Time dt);
+		// Dessin (virtuel) de l'abeille dépendant du type de l'abeille
+		virtual void drawOn(sf::RenderTarget& target) const;
+		// Dessine la zone "Collider" de l'abeille en mode Debug
+		void drawBeeZone(sf::RenderTarget& target, Vec2d const& position) const;
+		
+		// Affichage de message de victoire sur la ruche et les abeilles
+		void winText(sf::RenderTarget& target) const;
+		
+		// "Principes" d'intéraction redéfini dans les sous-classes
+		virtual void interact(Bee* bee) = 0;
+		virtual void interactWith(ScoutBee* other) = 0; ///surcharge
+		virtual void interactWith(WorkerBee* other) = 0; ///surcharge
+
+		
+		
+	
+	private:
+		// La ruche associé à l'abeille 
+		Hive& hive_;
+		double energie_;
+		Vec2d vitesse_;
+		
+		// Est-ce que l'abeille a une fleure en mémoire ?
+		bool memory_;
+		// Position de la fleur en mémoire
+		Vec2d memoryFlower_;
+		// "Attitude" de l'abeille (définit selon l'énum ci-dessus)
+		Mood mood_;
+		// Position (fleur/ruche) que l'abeille garde comme cible
+		Vec2d cible_;
+		// Délai pour que l'abeille se dégage
+		sf::Time avoidanceClock_;
+		
+		
+		
+	
+	
+};
+
+
+#endif

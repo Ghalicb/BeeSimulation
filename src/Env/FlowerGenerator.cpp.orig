@@ -1,0 +1,45 @@
+#include "FlowerGenerator.hpp"
+#include "Random/Random.hpp"
+#include <Application.hpp>
+#include "Env.hpp"
+
+FlowerGenerator::FlowerGenerator()
+{
+	/* On ne "reset" pas à proprement parler, mais comme reset met aussi
+	 * le compteur à 0, on évite la dupplication de code.
+	 */
+	reset();
+}
+
+void FlowerGenerator::update(sf::Time dt)
+{
+	compteur_ += dt;
+	
+	double seuilT = getAppConfig()["simulation"]["flower generator"]["delay"].toDouble();
+	sf::Time seuilTime = sf::seconds(seuilT);
+	bool generation = getAppConfig()["simulation"]["flower generator"]["active"].toBool();        
+	
+	int Maxflower((getAppConfig()["simulation"]["env"]["max flowers"]).toInt());
+	
+	/* Le générateur de fleur tourne à vide (sans créer de nouvelle fleur),
+	 * si le seuil de fleur fixé est atteint.
+	 */
+	if ( (compteur_ >= seuilTime) and (generation) and (getAppEnv().getNbFlower() < Maxflower))
+	{
+		compteur_ = sf::Time::Zero;
+		bool stop;
+		
+		do
+		{
+			Vec2d randomPos;
+			randomPos.x = uniform(0, static_cast<int>(getApp().getWorldSize().x));
+			randomPos.y = uniform(0, static_cast<int>(getApp().getWorldSize().y));
+			stop = getAppEnv().addFlowerAt( randomPos );
+		} while(stop == false);
+	} 
+}
+
+void FlowerGenerator::reset()
+{
+	compteur_ = sf::Time::Zero;
+}
