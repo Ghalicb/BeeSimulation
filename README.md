@@ -46,7 +46,7 @@ Options d’affichage :
 - *Mode Debug* : en appuyant sur la touche « d », vous activez le mode debug qui vous donnera des informations sur divers éléments de la simulation.
 - *Mode Humidité* : en appuyant sur la touche « w », vous pourrez voir les sous-terrains de la map (avec notamment les zones d’humidités).
 	
-## Suggestion pour plus d’amusement
+## Bonus
 
 - Ce qui était initialement une simulation a tourné en une sorte de jeu où l’utilisateur peut mettre en compétition plusieurs ruches et voir laquelle atteindra un certain seuil de Nectar.  
 Pensez une fois, à mettre le mode debug pour voir des animations intéressantes lorsqu’une ruche a gagné !
