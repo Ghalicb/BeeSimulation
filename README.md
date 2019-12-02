@@ -1,4 +1,4 @@
-	A. Présentation du programme:
+## Présentation du programme
 
 Notre programme permet de simuler l'évolution d'un environnement composé d’un terrain, de fleurs, de ruches et d’abeilles.
 
@@ -13,13 +13,11 @@ Enfin, des ruches contenant deux types d’abeilles sont intégrés à l’envir
 	- Les ScoutBees (éclaireuse), petite et rapide, dévouées toute leur vie à la recherche de fleurs.
 	- Les WorkerBees (butineuse), costaud et plus lent, allant butiner les fleurs communiquées par les éclaireuses. 
 	
-
 A noter que le programme permet d’observer quelques données sur la simulation dans un mode « Debug » dont on reparlera plus tard.
 
 Et pour plus de convivialité, pensez à augmenter le son ou à mettre un casque … ;)
 
-
-	B. Compilation du programme:
+## Compilation du programme
 
 Pour compiler le programme, il est nécessaire de lancer la commande (dans la partie5) :
 			"scons application-run"
@@ -27,7 +25,7 @@ depuis le répertoire contenant Sconstruct.
 A noter que l’on peut changer la taille du terrain en ajoutant l’option 
 ’—-cfg=appX.json’ (où X est un chiffre entre 1 et 4, où le fichier 3 est celui recommandé).
 
-	C. Utilisation du programme :
+## Utilisation du programme
 	
 Mise en place des différents éléments de l’environnement :
 	1. Fleur :
