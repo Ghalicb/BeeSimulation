@@ -24,7 +24,11 @@ Pour compiler le programme, il est nécessaire de lancer la commande (dans la pa
 	scons application-run  
 	
 depuis le répertoire contenant Sconstruct.
-A noter que l’on peut changer la taille du terrain en ajoutant l’option ’—-cfg=appX.json’ (où X est un chiffre entre 1 et 4, où le fichier 3 est celui recommandé).
+A noter que l’on peut changer la taille du terrain en ajoutant l’option   
+
+	’—-cfg=appX.json’ 
+	
+(où X est un chiffre entre 1 et 4, où le fichier 3 est celui recommandé).
 
 ## Utilisation du programme
 	
