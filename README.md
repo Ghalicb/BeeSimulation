@@ -1,3 +1,5 @@
+# BeeSimulation
+
 ## Présentation du programme
 
 Notre programme permet de simuler l'évolution d'un environnement composé d’un terrain, de fleurs, de ruches et d’abeilles.  
